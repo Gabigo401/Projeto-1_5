@@ -12,7 +12,19 @@ int main() {
       pos = 0;   //pos vira
     }
 
-    if (opcao == 1) {  //se a repostar for 1
+    int opcao;  //int para a variavel opcao
+  do {
+    printf("\nMenu principal\n");   //printf mostrando o menu e algumas opções
+    printf("1 - Criar tarefa\n");
+    printf("2 - Deletar tarefa\n");
+    printf("3 - Listar tarefas\n");
+    printf("0 - Sair\n");
+    printf("Escolha uma opcao: ");
+
+    scanf("%d", &opcao);  //scanf para ler a resposta e guardar no endereço da variavel de opcao
+    clearBuffer();  //usado para limpar o buffer apos o scanf
+    
+       if (opcao == 1) {  //se a repostar for 1
         Status s = criar(tarefas, &pos);  //chama a função dde criar
         if (s != OK)   //se  houver um erro mostra essa mensagem e codigo
           printf("Erro ao criar tarefa. Código: %d\n", s);
@@ -38,3 +50,4 @@ int main() {
   
     return 0;
   }
+
