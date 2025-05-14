@@ -13,4 +13,13 @@ Status deletar(Tarefa tarefas[], int *pos) { //criando função de deletar e um 
     
     pos_deletar--;  //decrementa a variavel
     if (pos_deletar >= *pos || pos_deletar < 0) //if para verificar se a posição e valida ajustando a posição de base o 0
-    return NAO_ENCONTRADO;  //se não for volta essa mensagem
+        return NAO_ENCONTRADO;  //se não for volta essa mensagem
+
+
+    int i;  //variavel chamada i
+    for (i = pos_deletar; i < *pos - 1; i++) {  //for para empurrar ao outras  listar uma posição para tras e sobreescrever a lista deletada
+        tarefas[i] = tarefas[i + 1];
+    }
+    (*pos)--;   //decrementa o numero total de tarefas
+    return OK;  //retorna ok como sucesso
+}
