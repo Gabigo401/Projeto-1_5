@@ -97,3 +97,9 @@ Status carregar(Tarefa tarefas[], int *pos) {  //função para ler e um array de
     
     return OK;  //mensagem de sucesso
 };
+
+void clearBuffer() {  //void para limpar o buffer
+    int c;   //int chamado c 
+    while ((c = getchar()) != '\n' && c != EOF)   //limpa o buffer do teclado apos um scanf
+      ;
+}
